@@ -118,30 +118,47 @@ i {
 /* Section --------------------  */
 .section-grid {
     background-color: antiquewhite;
- grid-template-columns: 2.5rem 1fr 2.5rem;
- grid-template-rows: 2.5rem 1fr 2.5rem;
- grid-template-areas: 
- "top-left-corner    top-border       top-right-corner"
- "left-border            main             right-border"
- "bottom-left-corner bottom-border bottom-right-corner";
+    grid-template-columns: 2.5rem 1fr 2.5rem;
+    grid-template-rows: 2.5rem 1fr 2.5rem;
+    grid-template-areas:
+        "top-left-corner    top-border       top-right-corner"
+        "left-border            main             right-border"
+        "bottom-left-corner bottom-border bottom-right-corner";
 }
 
 /* Frame Layout  */
 .multi-frames-container {
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+
     gap: var(--gap);
     padding: .5rem;
     grid-area: main;
 }
 
-.frame-container {
+.frame-wrapper {
     position: relative;
-    border: 2px solid black;
-    min-height: 15rem;
-    /* min-width: 16rem; */
-    overflow: hidden;
-    transition: transform 70ms cubic-bezier(.66, .91, 1, 1.74);
 
+
+    min-height: 15rem;
+
+    /* min-height: 150px */
+}
+
+.frame-container {
+    position: absolute;
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
+    /* min-height: 15rem; */
+    /* min-width: 16rem; */
+    /* overflow: hidden;
+    transition: transform 70ms cubic-bezier(.66, .91, 1, 1.74); */
+
+}
+
+.overlay-container {
+    position: relative;
 }
 
 .text-bubble {
@@ -217,10 +234,6 @@ i {
 
 }
 
-.frame-container:hover > * {
-    /* transform: scale(1.1); */
-}
-
 
 /* Scrolling Text border --------------------------------------------------------- */
 .scroll-container {
@@ -260,7 +273,7 @@ i {
 
 .top-border .scrolling-text {
     justify-content: end;
-        transform: translate3d(calc(var(--scroll-y) / 2 * 1px), 0px, 0px);
+    transform: translate3d(calc(var(--scroll-y) / 2 * 1px), 0px, 0px);
 }
 
 .bottom-border {
@@ -269,11 +282,11 @@ i {
 
 .bottom-border .scrolling-text {
     justify-content: left;
-    transform: translate3d(calc(var(--scroll-y) / 2 * -1px), 0px, 0px) ;
+    transform: translate3d(calc(var(--scroll-y) / 2 * -1px), 0px, 0px);
 }
 
 .left-border {
-    grid-area:left-border; 
+    grid-area: left-border;
 }
 
 .left-border .scrolling-text {
@@ -295,6 +308,7 @@ i {
     height: 3.5rem;
     transform: rotate(calc(var(--scroll-y) * 2 * 1deg));
 }
+
 .corner-circle {
     /* position: absolute; */
     background-color: rgb(212, 212, 164);
@@ -358,11 +372,11 @@ i {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .frame-container:nth-child(1) {
+    .frame01 {
         grid-row: 1/3;
     }
 
-    .frame-container:nth-child(6) {
+    .frame06 {
         grid-column: 4/5;
         grid-row: 1/3;
     }
