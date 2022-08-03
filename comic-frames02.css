@@ -202,25 +202,11 @@ i {
 /* Style layout --------------  */
 .frame-container:hover {
     transform: scale(1.1);
-    width: max-content;
-
-
-
-
-
-
-
+    /* width: max-content; */
     z-index: 999;
     border: 4px solid black;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
-
-
 }
-
-.frame-container:hover > * {
-    /* transform: scale(1.1); */
-}
-
 
 /* Scrolling Text border --------------------------------------------------------- */
 .scroll-container {
