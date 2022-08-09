@@ -122,18 +122,45 @@ i {
     ;
 }
 
-.intro-container {
-    border: 2px solid black;
-}
+/* Hero ---------------------------  */
 
 .hero-container {
-    position: relative;
-    min-height: 50rem;
-    overflow: hidden;
     grid-area: hero;
+    position: relative;
+    border: 2px solid black;
 
 }
-/* SVG  */
+
+.hero-text-container {
+    position: relative;
+    top: -8rem;
+}
+
+.text-wrap-shape {
+    width: 100%;
+	height: 10rem;
+	/* background-color: #E91E63; */
+	float: right;
+	shape-outside: polygon(0px 0px, 99.4% -2%, 98.89% 31%, 81.42% 39%, 46.31% 19.00%);
+	shape-margin: 10px;
+}
+.hero-text {
+    text-align: justify;
+    position: relative;
+    /* top: -5rem; */
+    padding: 0 2rem;
+}
+
+
+.hero-wrapper {
+    position: relative;
+    overflow: hidden;
+    
+    /* height: clamp(50rem, 80vh, 80vh); */
+    height: 80vh;
+}
+
+/* Hero SVG  */
 
 .hero-main-image {
     border: 2px solid black;
@@ -158,6 +185,13 @@ i {
     height: 100%;
 }
 
+/* Intro panels --------------------------  */
+
+.intro-container {
+    border: 2px solid black;
+}
+
+
 /* Media ---------------------------  */
 @media screen and (min-width: 700px) {
 
@@ -169,7 +203,7 @@ i {
     }
 
     .hero-container {
-        height: calc(100vw / 2.5);
+        /* height: calc(100vw / 2.5); */
     }
 
 
