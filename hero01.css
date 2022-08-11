@@ -6,8 +6,7 @@
 
     /* font  */
     --font-headline: "Arial", sans-serif;
-    ;
-    --font-body: "Times New Roman", serif;
+    --font-body: "Arial", sans-serif;
     --font-size-xsm: 1rem;
     --font-size-sm: 1.6rem;
     --font-size-md: 2.4rem;
@@ -129,71 +128,134 @@ i {
     position: relative;
     border: 2px solid black;
 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
 }
 
-.hero-text-container {
+.hero-image-banner-container {
     position: relative;
-    top: -8rem;
-}
-
-.text-wrap-shape {
-    width: 100%;
-	height: 10rem;
-	/* background-color: #E91E63; */
-	float: right;
-	shape-outside: polygon(0px 0px, 99.4% -2%, 98.89% 31%, 81.42% 39%, 46.31% 19.00%);
-	shape-margin: 10px;
-}
-.hero-text {
-    text-align: justify;
-    position: relative;
-    /* top: -5rem; */
-    padding: 0 2rem;
-}
-
-
-.hero-wrapper {
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     
-    /* height: clamp(50rem, 80vh, 80vh); */
-    height: 80vh;
+    
+    
+    
+    /* Offset text below with negative margin  */
+    margin-bottom: -3rem;
+    
 }
 
-/* Hero SVG  */
-
-.hero-main-image {
-    border: 2px solid black;
-}
-.place-svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.overlay-svg {
-    /* border: 1px solid blue; */
-    position: absolute;
-    width: 100%;
-    bottom: 5rem;
+.hero-svg-wrapper {
+    /* set height on mobile  */
+    min-height: 60vh;
 }
 
 .banner-container {
     position: absolute;
     width: 100.5%;
-    height: 100%;
 }
 
-/* Intro panels --------------------------  */
+/* Hero SVG  */
+.place-svg {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-.intro-container {
+.place-banner-svg {
+    /* position: relative; */
+    width: 100%;
+}
+
+.overlay-svg {
+    /* border: 1px solid blue; */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /* bottom: 5rem; */
+}
+
+
+/* Hero text  */
+.hero-text-container {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.text-wrap-shape {
+    position: relative;
+    width: 100%;
+	height: 5rem;
+	background-color: rgb(209, 139, 162, 0.2);
+	float: right;
+	shape-outside: polygon(22px -29px, 99.4% -2%, 93.29% 49.00%, 76.99% 73%, 32.36% -24%);
+	shape-margin: .5rem;
+}
+
+
+.hero-text {
+    text-align: justify;
+    font-family: var(--font-body);
+    font-size: var(--font-size-xsm);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+
+
+
+/* Side panels --------------------------  */
+
+.side-container {
     border: 2px solid black;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.side-box {
+    border: 2px solid black;
+    padding: 1rem;
+}
+
+.side-box01-text-wrap-shape {
+    background-color: bisque;
+    height: 100%;
+    width: 100%;
+
+    float: right;
+	shape-outside: polygon(-1px 1px, 99.4% -2%, 102% 100.1%);
+	shape-margin: 10px;
+
+}
+
+.side-box02-text-wrap-shape {
+    background-color: bisque;
+    height: 100%;
+    width: 100%;
+
+    float: right;
+	shape-outside: polygon(-1px 1px, 99.4% -2%, 102% 100.1%);
+	shape-margin: 10px;
+
+}
+
+.side-box-text-content p {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xsm);
+    text-align: justify;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+.side-box-text-content h3 {
+
 }
 
 
 /* Media ---------------------------  */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
 
     .grid-layout {
         grid-template-columns: minmax(10rem, 1fr) 3fr minmax(10rem, 1fr);
@@ -203,7 +265,16 @@ i {
     }
 
     .hero-container {
-        /* height: calc(100vw / 2.5); */
+        /* min-height: 80vh; */
+    }
+
+    .hero-wrapper {
+        /* width: 100%; */
+        /* height: 100%; */
+    }
+
+    .hero-image-banner-container {
+        /* width: fit-content; */
     }
 
 
