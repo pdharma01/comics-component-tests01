@@ -6,8 +6,9 @@
 
     /* font  */
     --font-headline: "Arial", sans-serif;
-    --font-body: "Arial", sans-serif;
-    --font-size-xsm: 1rem;
+    /* --font-body: "Arial", sans-serif; */
+    --font-body: 'Pompiere';
+    --font-size-xsm: 1.2rem;
     --font-size-sm: 1.6rem;
     --font-size-md: 2.4rem;
     --font-size-lg: 3rem;
@@ -155,7 +156,10 @@ i {
 .hero-svg-wrapper {
     /* set height on mobile  */
     min-height: 60vh;
+    clip-path:polygon(100% 0%, 100.28% 90.81%, 76% 98.45%, 20.69% 84.78%, 0.14% 92.46%, 0% 0%);
 }
+
+
 
 .banner-container {
     position: absolute;
@@ -272,7 +276,8 @@ i {
 .sidebox-text-content p {
     padding-top: 30%;
     font-family: var(--font-body);
-    font-size: var(--font-size-xsm);
+    font-size: var(--font-size-sm);
+    font-weight: bolder;
     /* text-align: justify; */
     text-transform: uppercase;
     /* letter-spacing: .2rem; */

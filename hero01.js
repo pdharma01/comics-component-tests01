@@ -7,8 +7,6 @@ function selectElement(selector) {
 let root = selectElement(":root")
 
 let sideBox = selectElement(".sidebox")
-let sideBoxContent = selectElement(".sidebox-text-content")
-
 
 function setBanner() {
     let width = sideBox.offsetWidth;
@@ -22,11 +20,6 @@ function setBanner() {
 
     root.style.setProperty('--banner-angle', "-" + angle + "deg")
     root.style.setProperty('--banner-width', newWidth + "px")
-
-
-    // set box height 
-    let sideBoxTextHeight = sideBoxContent.offsetHeight;
-    root.style.setProperty('--sidebox-height', sideBoxTextHeight + "px")
 }
 
 setBanner()
