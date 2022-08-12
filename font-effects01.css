@@ -1,0 +1,135 @@
+/* #region -----| Global |------------------------------------------------  */
+:root {
+    /* colors  */
+    --color-1-light: rgb(231, 231, 231);
+    --color-2-xtra-dark: rgb(41, 41, 41);
+
+    /* font  */
+    --font-headline: "Arial", sans-serif;;
+    --font-body: "Times New Roman", serif;
+    --font-size-xsm: 1.2rem;
+    --font-size-sm: 1.6rem;
+    --font-size-md: 2.4rem;
+    --font-size-lg: 3rem;
+    --font-size-xl: 4rem;
+
+    --gap: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Guide  */
+    /* border: 1px solid red; */
+}
+
+html {
+    /* font-size: 10px; Makes 1rem = 10px , must change font size to 1.6rem */
+    font-size: 62.5%;
+
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    color: black;
+    background-color: red;
+    letter-spacing: 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    /* so images dont overflow their containers  */
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button {
+    /* font is shorthand for size, style, etc  */
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+/* Remix Icon Size  */
+i {
+    font-size: var(--font-size-md);
+}
+/* #endregion  */
+
+/* #region -----| Reusable Styles |---------------------------------------*/
+.container {
+    /* limit how wide a container can go  */
+    max-width: 160rem;
+    /* center */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.place-items-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.section {
+    padding-block: 5rem;
+}
+/* #endregion  */
+
+/* #region -----| Styles |-------------------------------------  */
+
+
+
+
+
+
+
+
+
+/* #endregion  */
+
+/* #region -----| Media Queries -from MOBILE |-------------------------------------  */
+
+/* Mobile style to min 365px  */
+@media screen and (min-width: 576px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+/* xlg-screen style to max 1920 */
+@media screen and (min-width: 1200px) {
+
+}
+
+/* #endregion  */
