@@ -19,22 +19,33 @@
 
     --gap: 1.5rem;
 
+    --text-border-1px-black:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+
     --text-shadow-hover:
-    2px 2px 0 rgb(7, 7, 7),
-    3px 3px 0 rgb(46, 39, 39),
-    4px 4px 0 rgb(78, 60, 60),
-    5px 5px 0 rgb(105, 65, 65),
-    6px 6px 0 rgb(121, 60, 60),
-    7px 7px 0 rgb(145, 55, 55),
-    8px 8px 0 rgb(155, 50, 50),
-    9px 9px 0 rgb(156, 45, 45),
-    10px 10px 0 rgb(168, 42, 42),
-    11px 11px 0 rgb(190, 32, 32),
-    12px 12px 0 rgb(207, 26, 26),
-    13px 13px 0 rgb(224, 20, 20),
-    14px 14px 0 rgb(230, 19, 19),
-    15px 15px 0 rgb(253, 6, 6)
-    ;
+        2px 2px 0 rgb(7, 7, 7),
+        3px 3px 0 rgb(46, 39, 39),
+        4px 4px 0 rgb(78, 60, 60),
+        5px 5px 0 rgb(105, 65, 65),
+        6px 6px 0 rgb(121, 60, 60),
+        7px 7px 0 rgb(145, 55, 55),
+        8px 8px 0 rgb(155, 50, 50),
+        9px 9px 0 rgb(156, 45, 45),
+        10px 10px 0 rgb(168, 42, 42),
+        11px 11px 0 rgb(190, 32, 32),
+        12px 12px 0 rgb(207, 26, 26),
+        13px 13px 0 rgb(224, 20, 20),
+        14px 14px 0 rgb(230, 19, 19),
+        15px 15px 0 rgb(253, 6, 6);
+
+    --js-shadow-01: 0px 0px 0 white;
+    --js-translate3D-01: translate3d(-20px, -20px, 0);
+
+
+    --js-preload-shadow02: 0;
 }
 
 *,
@@ -131,16 +142,98 @@ i {
 /* #region -----| Styles |-------------------------------------  */
 
 
+/* #region -- WORKING Active class JS shadows --------- */
+.preload-headline {
+    position: relative;
+    font-size: var(--font-size-xl);
+    text-transform: uppercase;
+    transition: all 500ms ease;
+}
+
+.first-headline {
+    color: lightgreen;
+}
+
+.first-headline:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    color: aqua;
+    text-shadow: var(--text-border-1px-black);
+}
+
+.second-headline {
+    color: beige;
+}
+
+.second-headline:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    color: rgb(224, 150, 202);
+    text-shadow: var(--text-border-1px-black);
+}
+
+/* JS set all preload shadows according to data-var-number */
+.shadow01:hover {
+    transform: var(--js-translate3D-01);
+    text-shadow: var(--js-shadow-01)
+}
+
+.shadow02:hover {
+    transform: var(--js-translate3D-02);
+    text-shadow: var(--js-shadow-02)
+}
+
+
+/* individual Letters  */
+.letter-headline {
+    color: lightpink;
+    text-shadow:
+
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+
+
+        2px 2px 0 black,
+        3px 3px 0 black;
+    font-size: 0;
+}
+
+.shadow03 {
+    display: inline-block;
+    font-size: var(--font-size-xl);
+    transition: all 200ms ease;
+}
+
+.shadow03:hover::before {
+    position: absolute;
+    content: attr(data-text);
+    color: magenta;
+    text-shadow: var(--text-border-1px-black);
+}
+
+.shadow03:hover {
+    transform: var(--js-translate3D-03);
+    text-shadow: var(--js-shadow-03)
+}
+
+
+
+
+/* #endregion  */
+
+/* #region Inline CSS style---------------------------------------------  */
 .headline {
     text-transform: uppercase;
-    font-size: var(--font-size-xxxl);
+    font-size: var(--font-size-xl);
 }
 
 .outline-text {
     color: antiquewhite;
 
     text-shadow:
-        -1px -1px 0 #000,
+        -1px -1px 0 rgb(80, 11, 121),
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000;
@@ -159,87 +252,56 @@ i {
 
 .hover-shadow {
     position: relative;
+    transition: all 500ms ease;
 }
 
 .hover-shadow-span {
-    transition: all 200ms ease;
+    /* transition: all 200ms ease; */
     color: lightblue;
-    text-shadow: 
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
 
 .hover-shadow-span::after {
-    transition: all 200ms ease;
+    transition: all 500ms ease;
     content: attr(data-text);
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-
-    text-shadow: 
-    -1px -1px 0 lightblue,
-    1px -1px 0 lightblue,
-    -1px 1px 0 lightblue,
-    1px 1px 0 lightblue,
-
-    -2px -2px 0 lightblue,
-    2px -2px 0 lightblue,
-    -2px 2px 0 lightblue,
-    2px 2px 0 lightblue,
-
-    -3px -3px 0 lightblue,
-    3px -3px 0 lightblue,
-    -3px 3px 0 lightblue,
-    3px 3px 0 lightblue,
-
-    -4px -4px 0 lightblue,
-    4px -4px 0 lightblue,
-    -4px 4px 0 lightblue,
-    4px 4px 0 lightblue,
-
-    -5px -5px 0 black,
-    5px -5px 0 black,
-    -5px 5px 0 black,
-    5px 5px 0 black,
-
-    -6px -6px 0 black,
-    6px -6px 0 black,
-    -6px 6px 0 black,
-    6px 6px 0 black
-
-
-
-
-
-    ;
 }
 
 .hover-shadow-span:hover {
     color: red;
     transform: translate3d(-15px, -15px, 0);
-    text-shadow:  
-    
-    
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black,
+    text-shadow:
 
-    -2px -2px 0 black,
-    2px -2px 0 black,
-    -2px 2px 0 black,
-    2px 2px 0 black;
+
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+
+        -2px -2px 0 black,
+        2px -2px 0 black,
+        -2px 2px 0 black,
+        2px 2px 0 black;
 }
 
-.hover-shadow:hover  .hover-shadow-span::after{
-    text-shadow:var(--text-shadow-hover);
+.hover-shadow:hover .hover-shadow-span::after {
+    text-shadow: var(--text-shadow-hover);
 }
 
+.hover-shadow:hover {
+    transform: translate3d(-15px, -15px, 0);
+}
 
-/* JS Generated Shadows ---------------------  */
+/* #endregion  */
+
+/* #region JS Generated Shadows ---------------------  */
 
 .js-foreground {
     position: relative;
@@ -247,30 +309,33 @@ i {
     transition: all 500ms ease;
 }
 
-.js-foreground > .js-shadow {
+.js-foreground>.js-shadow {
+    transition: all 500ms ease;
     /* display: none; */
     position: absolute;
     z-index: -1;
     color: aqua;
 }
+
 .js-foreground:hover {
     color: beige;
     transform: translate3d(-20px, -20px, 0);
-    text-shadow:  
-    
-    
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black,
+    text-shadow:
 
-    -2px -2px 0 black,
-    2px -2px 0 black,
-    -2px 2px 0 black,
-    2px 2px 0 black;
+
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+
+        -2px -2px 0 black,
+        2px -2px 0 black,
+        -2px 2px 0 black,
+        2px 2px 0 black;
     /* transform: translate3d(-20px, -20px, 0); */
 }
-.js-foreground:hover > .js-shadow {
+
+.js-foreground:hover>.js-shadow {
     transition: all 500ms ease;
 }
 
@@ -288,6 +353,9 @@ i {
 
 
 /* #endregion  */
+
+
+
 
 /* #region -----| Media Queries -from MOBILE |-------------------------------------  */
 
