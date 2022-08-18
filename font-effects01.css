@@ -18,6 +18,23 @@
     --font-size-xxxl: 9rem;
 
     --gap: 1.5rem;
+
+    --text-shadow-hover:
+    2px 2px 0 rgb(7, 7, 7),
+    3px 3px 0 rgb(46, 39, 39),
+    4px 4px 0 rgb(78, 60, 60),
+    5px 5px 0 rgb(105, 65, 65),
+    6px 6px 0 rgb(121, 60, 60),
+    7px 7px 0 rgb(145, 55, 55),
+    8px 8px 0 rgb(155, 50, 50),
+    9px 9px 0 rgb(156, 45, 45),
+    10px 10px 0 rgb(168, 42, 42),
+    11px 11px 0 rgb(190, 32, 32),
+    12px 12px 0 rgb(207, 26, 26),
+    13px 13px 0 rgb(224, 20, 20),
+    14px 14px 0 rgb(230, 19, 19),
+    15px 15px 0 rgb(253, 6, 6)
+    ;
 }
 
 *,
@@ -45,7 +62,12 @@ body {
     letter-spacing: 1px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-headline);
 }
 
@@ -78,6 +100,7 @@ button {
 i {
     font-size: var(--font-size-md);
 }
+
 /* #endregion  */
 
 /* #region -----| Reusable Styles |---------------------------------------*/
@@ -102,6 +125,7 @@ i {
 .section {
     padding-block: 5rem;
 }
+
 /* #endregion  */
 
 /* #region -----| Styles |-------------------------------------  */
@@ -116,10 +140,10 @@ i {
     color: antiquewhite;
 
     text-shadow:
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .outline-shadow-text {
@@ -127,11 +151,134 @@ i {
     color: white;
     text-shadow:
         5px 5px 0 #000,
-      -1px -1px 0 #000,  
-       1px -1px 0 #000,
-       -1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
         1px 1px 0 #000;
 }
+
+.hover-shadow {
+    position: relative;
+}
+
+.hover-shadow-span {
+    transition: all 200ms ease;
+    color: lightblue;
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.hover-shadow-span::after {
+    transition: all 200ms ease;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    text-shadow: 
+    -1px -1px 0 lightblue,
+    1px -1px 0 lightblue,
+    -1px 1px 0 lightblue,
+    1px 1px 0 lightblue,
+
+    -2px -2px 0 lightblue,
+    2px -2px 0 lightblue,
+    -2px 2px 0 lightblue,
+    2px 2px 0 lightblue,
+
+    -3px -3px 0 lightblue,
+    3px -3px 0 lightblue,
+    -3px 3px 0 lightblue,
+    3px 3px 0 lightblue,
+
+    -4px -4px 0 lightblue,
+    4px -4px 0 lightblue,
+    -4px 4px 0 lightblue,
+    4px 4px 0 lightblue,
+
+    -5px -5px 0 black,
+    5px -5px 0 black,
+    -5px 5px 0 black,
+    5px 5px 0 black,
+
+    -6px -6px 0 black,
+    6px -6px 0 black,
+    -6px 6px 0 black,
+    6px 6px 0 black
+
+
+
+
+
+    ;
+}
+
+.hover-shadow-span:hover {
+    color: red;
+    transform: translate3d(-15px, -15px, 0);
+    text-shadow:  
+    
+    
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black,
+
+    -2px -2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    2px 2px 0 black;
+}
+
+.hover-shadow:hover  .hover-shadow-span::after{
+    text-shadow:var(--text-shadow-hover);
+}
+
+
+/* JS Generated Shadows ---------------------  */
+
+.js-foreground {
+    position: relative;
+    color: limegreen;
+    transition: all 500ms ease;
+}
+
+.js-foreground > .js-shadow {
+    /* display: none; */
+    position: absolute;
+    z-index: -1;
+    color: aqua;
+}
+.js-foreground:hover {
+    color: beige;
+    transform: translate3d(-20px, -20px, 0);
+    text-shadow:  
+    
+    
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black,
+
+    -2px -2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    2px 2px 0 black;
+    /* transform: translate3d(-20px, -20px, 0); */
+}
+.js-foreground:hover > .js-shadow {
+    transition: all 500ms ease;
+}
+
+.js-shadow {
+    color: beige;
+}
+
+
 
 
 
@@ -145,21 +292,13 @@ i {
 /* #region -----| Media Queries -from MOBILE |-------------------------------------  */
 
 /* Mobile style to min 365px  */
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {}
 
-}
+@media screen and (min-width: 768px) {}
 
-@media screen and (min-width: 768px) {
-
-}
-
-@media screen and (min-width: 992px) {
-
-}
+@media screen and (min-width: 992px) {}
 
 /* xlg-screen style to max 1920 */
-@media screen and (min-width: 1200px) {
-
-}
+@media screen and (min-width: 1200px) {}
 
 /* #endregion  */
