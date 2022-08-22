@@ -1,0 +1,325 @@
+/* #region -----| Global |------------------------------------------------  */
+:root {
+    /* colors  */
+    --color-1-light: rgb(231, 231, 231);
+    --color-2-xtra-dark: rgb(41, 41, 41);
+
+    /* font  */
+    --font-headline: "Arial", sans-serif;
+    /* --font-body: "Arial", sans-serif; */
+    --font-body: 'Pompiere';
+    --font-size-xsm: 1.2rem;
+    --font-size-sm: 1.6rem;
+    --font-size-md: 2.4rem;
+    --font-size-lg: 3rem;
+    --font-size-xl: 4rem;
+
+    --gap: .75rem;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Guide  */
+    /* border: 1px solid red; */
+}
+
+html {
+    /* font-size: 10px; Makes 1rem = 10px , must change font size to 1.6rem */
+    font-size: 62.5%;
+
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    color: black;
+    background-color: white;
+    letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-headline);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    /* so images dont overflow their containers  */
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button {
+    /* font is shorthand for size, style, etc  */
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+/* Remix Icon Size  */
+i {
+    font-size: var(--font-size-md);
+}
+
+/* #endregion  */
+
+/* #region -----| Reusable Styles |---------------------------------------*/
+.container {
+    /* limit how wide a container can go  */
+    max-width: 160rem;
+    /* center */
+    margin: 0 auto;
+}
+
+.place-items-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.section {
+    padding: 3%;
+    margin: 0 auto;
+    max-width: 160rem;
+    background-color: #D1D2D4;
+}
+
+/* Layout   */
+.grid-layout {
+    display: grid;
+    gap: var(--gap);
+    grid-template-areas:
+        "hero hero"
+        "left-intro right-intro"
+    ;
+}
+
+/* Hero ---------------------------  */
+
+.hero-container {
+    grid-area: hero;
+    position: relative;
+    border: 2px solid black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 330px;
+
+}
+
+.hero-image-banner-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    /* Offset text below with negative margin  */
+    margin-bottom: -3rem;
+
+}
+
+/* Hero Image---------  */
+.hero-svg-wrapper {
+    /* set height on mobile  */
+    min-height: 70vh;
+    max-height: 85vh;
+    clip-path: polygon(100% 0%, 100.28% 90.81%, 76% 98.45%, 20.69% 84.78%, 0.14% 92.46%, 0% 0%);
+}
+
+.hero-svg-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.hero01-wall-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* Hero Layers and Animations  --------------  */
+.hero01-wall {
+    position: relative;
+    top: 0;
+    animation: hero01-wall-animation 1000ms linear;
+}
+
+@keyframes hero01-wall-animation {
+    0% {
+        transform: scale3d(1.5, 1.5, 1) translateY(15%);
+    }
+    100% {
+        transform: scale3d(1.2, 1.2, 1) translateY(3%);
+    }
+}
+
+
+
+.desk-group {
+    position: absolute;
+    top: 0;
+    animation: desk-group-animation 1000ms linear;
+}
+@keyframes desk-group-animation {
+    0% {
+        transform: translate3d(8%, 60%, 0) scale(1.7);
+    }
+
+    100% {
+        transform: translate3d(0%, 10%, 0) scale(.9);
+    }
+}
+
+
+.hero04-stuff-left {
+    animation: hero04-stuff-left-animation 1000ms linear;
+}
+@keyframes hero04-stuff-left-animation {
+    0% {
+        transform: translate3d(10%, -5%, 0);
+    }
+}
+
+.hero03-stuff-right {
+    animation: hero03-stuff-right-animation 1000ms linear;
+}
+@keyframes hero03-stuff-right-animation {
+    0% {
+        transform: translate3d(-7%, 0%, 0)
+    }
+}
+
+.hero05-person {
+    animation: hero05-person-animation 1000ms linear;
+}
+@keyframes hero05-person-animation {
+    0% {
+        transform: translate3d(-10%, 0%, 0);
+    }
+}
+
+
+/* -----------------------  */
+
+.banner-container {
+    position: absolute;
+    width: 100.5%;
+}
+
+/* Hero SVG  */
+.place-svg {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.place-banner-svg {
+    /* position: relative; */
+    width: 100%;
+}
+
+.overlay-svg {
+    /* border: 1px solid blue; */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /* bottom: 5rem; */
+}
+
+
+/* Hero text  */
+.hero-text-container {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.text-wrap-shape {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(209, 139, 162, 0.2);
+    float: right;
+    shape-outside: polygon(22px -29px, 99.4% -2%, 93.29% 49.00%, 76.99% 73%, 32.36% -24%);
+    shape-margin: .5rem;
+}
+
+
+.hero-text {
+    text-align: justify;
+    font-family: var(--font-body);
+    font-size: var(--font-size-xsm);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+
+/* Side Panels -----------------------  */
+.side-container {
+    border: 2px solid black;
+    min-height: 30rem;
+}
+
+
+
+/* Media ---------------------------  */
+@media screen and (min-width: 700px) {
+
+    .grid-layout {
+        grid-template-columns: minmax(10rem, 1fr) 3fr minmax(10rem, 1fr);
+        grid-template-areas:
+            "intro-left hero intro-right"
+        ;
+    }
+
+
+
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+
+/* Bind animations to window width --------------------------- */
+:root * {
+    /* Pause the animation */
+    animation-play-state: paused;
+    
+    /* Bind the animation to width */
+    animation-delay: calc(var(--js-keyframe) * -1000ms);
+    
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
